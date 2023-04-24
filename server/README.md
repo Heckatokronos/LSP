@@ -8,19 +8,6 @@
       <th>Path</th>
       <th>Controller#Action</th>
     </tr>
-    <tr class='bottom'>
-      <th>
-        <a data-route-helper="_path" title="Returns a relative path (without the http or domain)" href="#">Path</a> /
-        <a data-route-helper="_url" title="Returns an absolute URL (with the http and domain)" href="#">Url</a>
-      </th>
-      <th>
-      </th>
-      <th>
-        <input id="search" placeholder="Path Match" type="search" name="path[]" />
-      </th>
-      <th>
-      </th>
-    </tr>
   </thead>
   <tbody class='exact_matches' id='exact_matches'>
   </tbody>
@@ -112,7 +99,7 @@
 
 # validation:
 
-* all params must be exist!
+* all params must be exist! (title, body, author, file)
 * minimum length of author - 4
 * minumum length of body - 10
 
@@ -120,5 +107,5 @@
 
 * file size must not be greater than 100 MB
 * file extentions only '.mp3', '.mp4', '.wav'
-* MIME_TYPE muse be [audio/mpeg] (audio formats)
+* MIME_TYPE must be [audio/mpeg] (audio formats)
 
