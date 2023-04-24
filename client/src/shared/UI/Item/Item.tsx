@@ -1,20 +1,27 @@
 import { FC } from "react";
 
-import "./Item.scss";
+import { Card } from "../Card/Card";
 
-interface ItemProps {
+import "./Item.scss";
+import { Button } from "../Button/Button";
+
+type ItemProps = {
   name: string;
   author: string;
   description: string;
-  children: React.ReactNode;
-}
+  audioSrc: string;
+};
 
 export const Item: FC<ItemProps> = ({ name, author, description }) => {
   return (
-    <div className="div">
-      <h1>{name}</h1>
-      <h2>{author}</h2>
-      <span>{description}</span>
-    </div>
+    <Card className="div">
+      <main>
+        <h2>{name}</h2>
+        <h3>{author}</h3>
+        <span>{description}</span>
+        <br />
+        <Button>Прослушать</Button>
+      </main>
+    </Card>
   );
 };

@@ -1,14 +1,15 @@
 nav {
+  top: 0;
   width: 85%;
   height: 5rem;
   display: flex;
-  position: sticky;
+  position: fixed;
   padding: 0 10%;
   z-index: 10;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-  backdrop-filter: "blur(8px)";
+  background-color: transparent;
+  backdrop-filter: blur(1px);
 
   h1 {
     font-size: 2rem;

@@ -42,11 +42,7 @@ export const Upload: React.FC<Props> = ({ onUpload }) => {
 
   return (
     <div>
-      <input
-        type="file"
-        accept="audio/*, video/*"
-        onChange={handleFileChange}
-      />
+      <input type="file" accept="audio/*" onChange={handleFileChange} />
       {file && <p> Выбранный файл {file.name} </p>}
       {!file && <p> Нет загруженных файлов </p>}
       {uploading && (

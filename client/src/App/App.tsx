@@ -11,6 +11,7 @@ const Upload = React.lazy(() => import("../pages/Upload/Upload"));
 function App() {
   return (
     <Layout>
+      <br />
       <Suspense
         fallback={
           <div className="centered">
@@ -20,7 +21,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/show" element={<Show />} />
+          <Route path="/show/:id" element={<Show link={""} />} />
           <Route path="/upload" element={<Upload />} />
         </Routes>
       </Suspense>

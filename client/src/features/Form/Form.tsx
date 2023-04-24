@@ -7,9 +7,13 @@ const Form = () => {
 
   const uploadFile = () => {};
 
+  const formHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <Card>
-      <form className="form">
+    <Card className="form">
+      <form onSubmit={formHandler}>
         <div>
           <Input label={"Название"} />
           <Input label={"Описание"} />

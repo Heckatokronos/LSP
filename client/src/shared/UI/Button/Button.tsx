@@ -1,13 +1,14 @@
 import "./Button.scss";
 
 interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  props?: any;
+  onClick?: () => void;
 }
 
-export const Button: React.FC<Props> = ({ onClick, children }, props) => {
+export const Button: React.FC<Props> = ({ onClick, children, ...props }) => {
   return (
-    <button onClick={props.onClick} className="button">
+    <button onClick={onClick} {...props} className="button">
       {children}
     </button>
   );
