@@ -1,5 +1,6 @@
 # simple-podcastAPI
 
+## Routes (you can also check that in console by 'rails routes'):
 <table id='route_table' class='route_table'>
   <thead>
     <tr>
@@ -97,15 +98,15 @@
   </tbody>
 </table>
 
-# validation:
+## validation for form:
 
 * all params must be exist! (title, body, author, file)
 * minimum length of author - 4
 * minumum length of body - 10
 
-# validation of file:
+## validation of file:
 
-* file size must not be greater than 100 MB
+* file size must be lesser than 100 MB
 * file extentions only '.mp3', '.mp4', '.wav'
 * MIME_TYPE must be [audio/mpeg] (audio formats)
 
