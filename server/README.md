@@ -1,4 +1,4 @@
-# simple-podcastAPI
+# forked from simple-podcastAPI
 
 ## Routes (you can also check that in console by 'rails routes'):
 <table id='route_table' class='route_table'>
