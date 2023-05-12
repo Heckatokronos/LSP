@@ -5,4 +5,6 @@ class Post < ApplicationRecord
 
   validates :author, length: { minimum: 4 }
   validates :body, length: { minimum: 10 }
+
+  belongs_to :category
 end
