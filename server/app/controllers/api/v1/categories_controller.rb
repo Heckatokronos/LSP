@@ -15,13 +15,14 @@ class Api::V1::CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    
+
     @category.destroy
     render json: @category, status: :see_other
   end
 
   private
-    def category_params
-      params.require(:category).permit(:name)
-    end
+
+  def category_params
+    params.require(:category).permit(:name)
+  end
 end
