@@ -11,5 +11,16 @@ Post.destroy_all
     author: Faker::Name.name,
     audio: uploader.upload(file)
   )
-  puts post.title
+
+  4.times do
+    category = Category.new(name: Faker::Book.unique.genre)
+    post.categories << category
+    post.save
+  end
+
+  puts "* #{post.title}"
+
+  post.categories.each do |c|
+    puts c.name
+  end
 end
