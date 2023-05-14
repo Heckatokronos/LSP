@@ -5,7 +5,7 @@ class Api::V1::PostsController < ApplicationController
   def index
     @posts = Post.includes(:categories).all
 
-    render json: @posts
+    render json: @posts, include: :categories
   end
 
   # GET /posts/1
