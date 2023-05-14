@@ -20,7 +20,5 @@ Post.destroy_all
 
   puts "* #{post.title}"
 
-  post.categories.each do |c|
-    puts c.name
-  end
+  post.categories.each { |n| puts n.name }
 end
