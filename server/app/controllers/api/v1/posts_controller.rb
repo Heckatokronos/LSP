@@ -10,7 +10,7 @@ class Api::V1::PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post, include: :categories
   end
 
   # POST /posts
