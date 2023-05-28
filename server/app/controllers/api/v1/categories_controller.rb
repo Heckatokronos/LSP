@@ -1,6 +1,7 @@
 class Api::V1::CategoriesController < ApplicationController
   def index
-    render json: Category.includes(:posts).all, include: :posts
+    @categories = Category.all
+    render json: @categories
   end
 
   def create
