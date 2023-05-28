@@ -13,7 +13,7 @@ Post.destroy_all
   )
 
   4.times do
-    category = Category.new(name: Faker::Book.unique.genre)
+    category = Category.new(name: Faker::Alphanumeric.unique.alpha(number: rand(4..20)))
     post.categories << category
     post.save
   end
