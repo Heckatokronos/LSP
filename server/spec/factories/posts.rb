@@ -6,7 +6,9 @@ FactoryBot.define do
     audio_data { TestData.uploaded_audio.to_json }
   end
 
-  after(:create) do |post|
-    post.categories << create_list(:category, 4)
+  trait :with_categories do
+    after(:create) do |post|
+      post.categories << create_list(:category, 4)
+    end
   end
 end

@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :category do
-    name { Faker::Lorem.unique.word }
+    name { Faker::Alphanumeric.unique.alpha(number: rand(4..20)) }
   end
 end
