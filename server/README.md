@@ -1,112 +1,95 @@
-# forked from simple-podcastAPI
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://www.shareicon.net/data/2015/08/30/93335_podcast_512x512.png" alt="Project logo"></a>
+</p>
 
-## Routes (you can also check that in console by 'rails routes'):
-<table id='route_table' class='route_table'>
-  <thead>
-    <tr>
-      <th>Helper</th>
-      <th>HTTP Verb</th>
-      <th>Path</th>
-      <th>Controller#Action</th>
-    </tr>
-  </thead>
-  <tbody class='exact_matches' id='exact_matches'>
-  </tbody>
-  <tbody class='fuzzy_matches' id='fuzzy_matches'>
-  </tbody>
-  <tbody>
-    <tr class='route_row' data-helper='path'>
-  <td data-route-name='api_v1_posts'>
-      api_v1_posts<span class='helper'>_path</span>
-  </td>
-  <td>
-    GET
-  </td>
-  <td data-route-path='/api/v1/posts(.:format)'>
-    /api/v1/posts(.:format)
-  </td>
-  <td>
-    <p>api/v1/posts#index</p>
-  </td>
-</tr>
-<tr class='route_row' data-helper='path'>
-  <td data-route-name=''>
-  </td>
-  <td>
-    POST
-  </td>
-  <td data-route-path='/api/v1/posts(.:format)'>
-    /api/v1/posts(.:format)
-  </td>
-  <td>
-    <p>api/v1/posts#create</p>
-  </td>
-</tr>
-<tr class='route_row' data-helper='path'>
-  <td data-route-name='api_v1_post'>
-      api_v1_post<span class='helper'>_path</span>
-  </td>
-  <td>
-    GET
-  </td>
-  <td data-route-path='/api/v1/posts/:id(.:format)'>
-    /api/v1/posts/:id(.:format)
-  </td>
-  <td>
-    <p>api/v1/posts#show</p>
-  </td>
-</tr>
-<tr class='route_row' data-helper='path'>
-  <td data-route-name=''>
-  </td>
-  <td>
-    PATCH
-  </td>
-  <td data-route-path='/api/v1/posts/:id(.:format)'>
-    /api/v1/posts/:id(.:format)
-  </td>
-  <td>
-    <p>api/v1/posts#update</p>
-  </td>
-</tr>
-<tr class='route_row' data-helper='path'>
-  <td data-route-name=''>
-  </td>
-  <td>
-    PUT
-  </td>
-  <td data-route-path='/api/v1/posts/:id(.:format)'>
-    /api/v1/posts/:id(.:format)
-  </td>
-  <td>
-    <p>api/v1/posts#update</p>
-  </td>
-</tr>
-<tr class='route_row' data-helper='path'>
-  <td data-route-name=''>
-  </td>
-  <td>
-    DELETE
-  </td>
-  <td data-route-path='/api/v1/posts/:id(.:format)'>
-    /api/v1/posts/:id(.:format)
-  </td>
-  <td>
-    <p>api/v1/posts#destroy</p>
-  </td>
-</tr>
-  </tbody>
-</table>
+<h3 align="center">Podcast Api</h3>
 
-## validation for form:
+<div align="center">
 
-* all params must be exist! (title, body, author, file)
-* minimum length of author - 4
-* minumum length of body - 10
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-## validation of file:
+</div>
 
-* file size must be lesser than 100 MB
-* file extentions only '.mp3', '.mp4', '.wav'
-* MIME_TYPE must be [audio/mpeg] (audio formats)
+## 📝 Table of Contents
 
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Prerequisites](#prerequisites)
+- [Installing](#Installing)
+- [Tests](#tests)
+- [Usage](#usage)
+
+## 🧐 About <a name = "about"></a>
+
+That project was created for understanding how api's works, how connect server-side rails to cliend-side application and work them together.
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [usage](#usage) for notes on how to use this API.
+
+### Prerequisites
+
+Pretty good if you have a Docker, they will install all packages automatically.
+
+### Installing
+
+First you need to build your container.
+
+You should clone that repo using `git clone` or `gh repo clone` and them build container on your system
+
+```
+Docker compose build
+```
+
+Create the database, load the schema and initialize all seed data using
+
+```
+Docker compose run web bin/rails db:setup
+```
+
+And them start the application using:
+
+```
+Docker compose up
+```
+
+**P.S: If you need to use bash commands (e.g. for using rails commands like `rails routes` or `bundle install`)**
+
+```
+Docker compose run web <bash command>
+```
+
+## 🔧 Running the tests <a name = "tests"></a>
+
+### Break down into end to end tests
+
+We need to ensure correct functionality, so you can test it by initializing Rspec
+
+```
+rspec
+```
+
+### And coding style tests
+
+At this moment we're not using any coding style tests.
+
+```
+-
+```
+
+## 🎈 Usage <a name="usage"></a>
+
+API was created by REST. Check all URI's in application:
+
+```
+rails routes
+```
+
+They will present you a list of all addresses of applications,
+HTTP Versb (**GET POST PATCH PUT DELETE**) and actions in ./app/controllers/api/v1/<controller_name.rb>
+
+You may also for understanding check tests in ./spec/requests
