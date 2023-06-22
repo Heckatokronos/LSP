@@ -11,5 +11,14 @@ Post.destroy_all
     author: Faker::Name.name,
     audio: uploader.upload(file)
   )
-  puts post.title
+
+  4.times do
+    category = Category.new(name: Faker::Alphanumeric.unique.alpha(number: rand(4..20)))
+    post.categories << category
+    post.save
+  end
+
+  puts "* #{post.title}"
+
+  post.categories.each { |n| puts n.name }
 end

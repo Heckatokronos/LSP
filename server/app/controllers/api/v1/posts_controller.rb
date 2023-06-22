@@ -3,14 +3,14 @@ class Api::V1::PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    @posts = Post.includes(:categories).all
 
-    render json: @posts
+    render json: @posts, include: :categories
   end
 
   # GET /posts/1
   def show
-    render json: @post
+    render json: @post, include: :categories
   end
 
   # POST /posts

@@ -52,6 +52,7 @@ gem "faker"
 
 group :test do
   gem 'simplecov', require: false
+  gem 'rails-controller-testing'
 end
 
 gem "dockerfile-rails", ">= 1.2", :group => :development
