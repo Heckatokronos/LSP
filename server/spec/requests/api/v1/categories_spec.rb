@@ -9,11 +9,24 @@ RSpec.describe "Api::V1::Categories", type: :request do
       get '/api/v1/categories'
     end
 
-    it 'returns categories' do
+    it 'should return 5 categories' do
       expect(assigns(:categories).size).to eq(5)
     end
 
     it 'returns status code 200' do
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET Post/Categories" do
+    let!(:post) { create(:post, :with_categories) }
+
+    it 'post should have 4 categories' do
+      expect(post.categories.size).to eq(4)
+    end
+
+    it 'returns status code 200' do
+      get "/api/v1/posts/#{post.id}/categories"
       expect(response).to have_http_status(200)
     end
   end
@@ -34,9 +47,8 @@ RSpec.describe "Api::V1::Categories", type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/api/v1/categories', params: { category: { name: '' } } }
-
-      it 'returns status code 422' do
+      it 'should forbit to create blank category, returns status code 422' do
+        post '/api/v1/categories', params: { category: { name: '' } }
         expect(response).to have_http_status(422)
       end
     end
